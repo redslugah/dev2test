@@ -4,12 +4,12 @@ escreva um programa na linguagem que desejar onde, informado um número, ele cal
 a sequência.
 '''
 fibo = [0, 1]
-Bfibo = 0
+b_fibo = 0
 number = int(input('Digite o número que deseja verificar se faz parte da sequência de Fibonacci: '))
 
-while number not in fibo and number > Bfibo:
+while number not in fibo and number > b_fibo:
     fibo.append(sum(fibo[-2:]))
-    Bfibo = fibo[-1]
+    b_fibo = fibo[-1]
 
 if number in fibo:
     print('O número faz parte da sequência de Fibonacci!')
