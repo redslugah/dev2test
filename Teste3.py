@@ -9,9 +9,17 @@ a) Usar o json ou xml disponível como fonte dos dados do faturamento mensal;
 b) Podem existir dias sem faturamento, como nos finais de semana e feriados. Estes dias devem ser ignorados no cálculo da média
 '''
 
-#Não localizei a fonte dos dados na plataforma GUPY, então será utilizado uma lista de valores aleatórios
-faturamento = [2480, 2294, 1085, 0, 496, 0, 2976, 0, 1085, 0, 0, 0, 3007, 2604, 0, 403, 713, 1984, 465, 2418, 0, 0, 806, 1612, 0, 837, 1209, 310, 0, 2945]
+import json
+
+faturamento = []
+data = []
 dias = 0
+
+with open('dados.json') as file:
+    data = json.load(file)
+
+for i in data:
+    faturamento.append(i['valor'])
 
 while 0 in faturamento:
     faturamento.remove(0)
